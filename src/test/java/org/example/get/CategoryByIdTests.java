@@ -29,7 +29,7 @@ class CategoryByIdTests extends BaseTestClass {
     void getCategoryByCorrectIdTest(String categoryName, String expectedId) {
         Category category = given()
                 .when()
-                .get(Endpoint.CATEGORIES + "/" + expectedId)
+                .get(Endpoint.CATEGORIES + expectedId)
                 .then()
                 .statusCode(200)
                 .extract().as(Category.class);
@@ -41,10 +41,10 @@ class CategoryByIdTests extends BaseTestClass {
     @CsvSource({"WrongID1", "WrongID2", "WrongID3",})
     void getCategoryByWrongIdTest(String wrongId) {
         given()
-        .when()
-            .get(Endpoint.CATEGORIES + "/" + wrongId)
-        .then()
-            .statusCode(404);
+                .when()
+                .get(Endpoint.CATEGORIES + "/" + wrongId)
+                .then()
+                .statusCode(404);
     }
 
 

@@ -18,7 +18,7 @@ class ParametersSupportedByCategoryTests extends BaseTestClass {
             "42540aec-367a-4e5e-b411-17c09b08e41f,3,Stan,Waga produktu z opakowaniem jednostkowym, EAN"
     })
     void parametersSupportedByCategoryTest(String catId, String paramAmount, String cat1, String cat2, String cat3) {
-        given().get(CATEGORIES + "/" + catId + PARAMETERS)
+        given().get(CATEGORIES + catId + PARAMETERS)
                 .then()
                 .statusCode(200)
                 .body("parameters", hasSize(Integer.parseInt(paramAmount)))
@@ -30,7 +30,7 @@ class ParametersSupportedByCategoryTests extends BaseTestClass {
     @ParameterizedTest
     @CsvSource({"WrongID1", "WrongID2", "WrongID3"})
     void parametersSupportedByCategoryWrongIdTest(String catId) {
-        given().get(CATEGORIES + "/" + catId + PARAMETERS)
+        given().get(CATEGORIES + catId + PARAMETERS)
                 .then()
                 .statusCode(404);
     }
