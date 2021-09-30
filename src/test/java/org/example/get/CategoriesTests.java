@@ -20,7 +20,6 @@ class CategoriesTests extends BaseTestClass {
 
     @BeforeAll
     public static void setUp2() {
-        System.out.println("SetUp2");
         categories = given()
                 .when()
                 .get(CATEGORIES)
