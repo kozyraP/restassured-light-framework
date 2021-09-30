@@ -9,7 +9,7 @@ import static org.example.endpoints.Endpoint.PARAMETERS;
 import static org.hamcrest.Matchers.*;
 
 
-class ParametersSupportedByCategoryTests extends TestClass {
+class ParametersSupportedByCategoryTests extends BaseTestClass {
 
     @ParameterizedTest
     @CsvSource({

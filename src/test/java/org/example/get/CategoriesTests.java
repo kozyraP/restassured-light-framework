@@ -13,7 +13,7 @@ import static io.restassured.RestAssured.given;
 import static org.example.endpoints.Endpoint.CATEGORIES;
 
 
-class CategoriesTests extends TestClass {
+class CategoriesTests extends BaseTestClass {
 
     private static List<Category> categories;
 
@@ -64,11 +64,5 @@ class CategoriesTests extends TestClass {
                 expectedId
         );
     }
-
-    @Test()
-    void helper() {
-        categories.forEach(category -> System.out.printf("\"%s,    %s\",\n", category.getName(), category.getId()));
-    }
-
 
 }

@@ -8,7 +8,7 @@ import org.junit.jupiter.params.provider.CsvSource;
 
 import static io.restassured.RestAssured.given;
 
-class CategoryByIdTests extends TestClass {
+class CategoryByIdTests extends BaseTestClass {
 
     @ParameterizedTest
     @CsvSource({
