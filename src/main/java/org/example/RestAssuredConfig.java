@@ -2,7 +2,6 @@ package org.example;
 
 import io.restassured.RestAssured;
 import io.restassured.builder.RequestSpecBuilder;
-import io.restassured.filter.log.LogDetail;
 import io.restassured.filter.log.RequestLoggingFilter;
 import io.restassured.filter.log.ResponseLoggingFilter;
 import io.restassured.specification.RequestSpecification;
@@ -29,8 +28,8 @@ public class RestAssuredConfig {
                 .addHeader("Authorization", "Bearer " + getAccessToken(clientId, clientSecretId))
                 .addHeader("Accept", "application/vnd.allegro.public.v1+json")
                 .addHeader("Content-Type", "application/vnd.allegro.public.v1+json")
-                .addFilter(new RequestLoggingFilter(LogDetail.URI))
-                .addFilter(new ResponseLoggingFilter(LogDetail.STATUS))
+                .addFilter(new RequestLoggingFilter())
+                .addFilter(new ResponseLoggingFilter())
                 .build();
         RestAssured.requestSpecification = requestSpecification;
     }
